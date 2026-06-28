@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="de" data-theme="anthrazit">
 <head>
 <meta charset="utf-8">
@@ -23,8 +23,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 
-<!-- Anti-Flash: Theme sofort setzen -->
-<script>(function(){try{var t=localStorage.getItem('yotek-theme');document.documentElement.setAttribute('data-theme',['anthrazit','schwarz','weiss'].indexOf(t)>-1?t:'anthrazit');}catch(e){}})();</script>
+<!-- Theme beim Neuladen immer auf Grau (anthrazit) setzen -->
+<script>document.documentElement.setAttribute('data-theme','anthrazit');window.__yotekLoadingLogo='assets/logo/logo-dark.png';</script>
 
 <!-- SEO: LocalBusiness -->
 <script type="application/ld+json">
@@ -71,7 +71,7 @@
 
 <!-- ============ LOADING SCREEN ============ -->
 <div id="loading-screen" style="position:fixed;inset:0;z-index:9999;background:#1a1c1b;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:1;transition:opacity .5s ease .6s,visibility 0s linear 1.1s;visibility:visible">
-  <img class="brand__logo brand__logo--dark" src="assets/logo/logo-dark.png" alt="YOTEK Garden Design" width="168" height="63" style="margin-bottom:2.2rem;height:auto;width:168px">
+  <img id="loading-logo" src="assets/logo/logo-dark.png" alt="YOTEK Garden Design" width="168" height="63" style="margin-bottom:2.2rem;height:auto;width:168px">
   <div style="width:200px;height:4px;background:rgba(157,217,63,.2);border-radius:2px;overflow:hidden;margin-bottom:1.2rem">
     <div id="loading-bar" style="height:100%;background:linear-gradient(90deg,#9ad94a,#8dc63f);width:0%;transition:width .2s ease;border-radius:2px"></div>
   </div>
@@ -79,6 +79,8 @@
 </div>
 <script>
 (function(){
+  var logo=document.getElementById('loading-logo');
+  if(logo&&window.__yotekLoadingLogo){logo.src=window.__yotekLoadingLogo;}
   var screen=document.getElementById('loading-screen'),bar=document.getElementById('loading-bar'),pct=document.getElementById('loading-percent');
   var p=0,target=100,interval=setInterval(function(){
     p+=Math.random()*40;if(p>target-10)p=target-10;
@@ -141,7 +143,7 @@
     <div class="hero__copy">
       <span class="eyebrow">Garten- &amp; Landschaftsbau · Region Frankenthal</span>
       <h1>Ihr Garten.<br><span class="accent">Unsere Leidenschaft.</span></h1>
-      <p class="hero__sub">Ihr Partner für Garten, Landschaftsbau inklusive Poolbau in der Metropolregion Rhein Necker.</p>
+      <p class="hero__sub">GardenDesignYotek gestaltet hochwertige Außenanlagen im Umkreis von rund 40&nbsp;km um Frankenthal – von der ersten Idee bis zum fertigen Garten, alles aus einer Hand.</p>
       <div class="hero__cta">
         <a class="btn btn--primary btn--lg" href="#kontakt">Kostenloses Angebot anfordern</a>
         <a class="btn btn--ghost btn--lg" href="galerie.html">Projekte ansehen</a>
@@ -197,7 +199,7 @@
 <section class="trust-strip">
   <div class="wrap trust-strip__row">
     <div class="stat reveal"><div class="stat__num">30+</div><div class="stat__label">Jahre Erfahrung im Bau</div></div>
-    <div class="stat reveal"><div class="stat__num">11</div><div class="stat__label">Leistungen aus einer Hand</div></div>
+    <div class="stat reveal"><div class="stat__num">14+</div><div class="stat__label">Leistungen aus einer Hand</div></div>
     <div class="stat reveal"><div class="stat__num">100%</div><div class="stat__label">Persönliche Beratung vor Ort</div></div>
     <div class="stat reveal"><div class="stat__num">2021</div><div class="stat__label">Familienbetrieb gegründet</div></div>
   </div>
