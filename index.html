@@ -154,44 +154,6 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Faire, transparente Angebote</li>
       </ul>
     </div>
-
-    <aside class="quote-card">
-      <p class="quote-card__title">In 30 Sekunden zur Anfrage</p>
-      <p class="quote-card__note">Wir melden uns zeitnah mit einem unverbindlichen Angebot.</p>
-      <form class="form form--compact" data-yotek-form>
-        <div class="honeypot" aria-hidden="true"><label>Bitte freilassen<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
-        <div class="field">
-          <label for="h-name">Name <span class="req">*</span></label>
-          <input class="input" id="h-name" name="name" type="text" required placeholder="Ihr Name">
-        </div>
-        <div class="field">
-          <label for="h-tel">Telefon <span class="req">*</span></label>
-          <input class="input" id="h-tel" name="telefon" type="tel" required placeholder="Für Ihren Rückruf">
-        </div>
-        <div class="field">
-          <label for="h-leistung">Gewünschte Leistung</label>
-          <div style="display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:flex-end">
-            <select class="select" id="h-leistung" name="leistung">
-              <option value="">Bitte wählen …</option>
-              <option>Gartengestaltung</option>
-              <option>Pflasterarbeiten</option>
-              <option>Terrassenbau</option>
-              <option>Rollrasen &amp; Rasenbau</option>
-              <option>Zaunbau</option>
-              <option>Mauern &amp; Treppen</option>
-              <option>Pool- &amp; Außenanlagen</option>
-              <option>Gartenpflege</option>
-              <option>Sonstiges</option>
-            </select>
-            <button type="button" class="btn-add-service" data-form="hero" aria-label="Leistung hinzufügen" title="Noch eine Leistung hinzufügen" style="width:44px;height:44px;padding:0;display:grid;place-items:center;font-size:1.4rem;font-weight:300">+</button>
-          </div>
-          <div class="services-list" data-form="hero" style="margin-top:.8rem;display:grid;gap:.4rem"></div>
-        </div>
-        <div class="form-status" role="status" aria-live="polite"></div>
-        <button class="btn btn--primary btn--block" type="submit">Anfrage senden</button>
-        <p class="form__note">Mit dem Absenden stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.</p>
-      </form>
-    </aside>
   </div>
 </section>
 
@@ -319,6 +281,49 @@
       </article>
     </div>
     <div class="section__head--center" style="margin-top:var(--sp-5)"><a class="btn btn--ghost btn--lg" href="https://instagram.com/gardendesignyotek" target="_blank" rel="noopener">Alle Projekte ansehen</a></div>
+  </div>
+</section>
+
+<!-- ============ SCHNELLANFRAGE ============ -->
+<section class="section section--tight" id="anfrage">
+  <div class="wrap" style="max-width:560px">
+    <aside class="quote-card">
+      <p class="quote-card__title">In 30 Sekunden zur Anfrage</p>
+      <p class="quote-card__note">Wir melden uns zeitnah mit einem unverbindlichen Angebot.</p>
+      <form class="form form--compact" data-yotek-form>
+        <div class="honeypot" aria-hidden="true"><label>Bitte freilassen<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <div class="field">
+          <label for="h-name">Name <span class="req">*</span></label>
+          <input class="input" id="h-name" name="name" type="text" required placeholder="Ihr Name">
+        </div>
+        <div class="field">
+          <label for="h-tel">Telefon <span class="req">*</span></label>
+          <input class="input" id="h-tel" name="telefon" type="tel" required placeholder="Für Ihren Rückruf">
+        </div>
+        <div class="field">
+          <label for="h-leistung">Gewünschte Leistung</label>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:flex-end">
+            <select class="select" id="h-leistung" name="leistung">
+              <option value="">Bitte wählen …</option>
+              <option>Gartengestaltung</option>
+              <option>Pflasterarbeiten</option>
+              <option>Terrassenbau</option>
+              <option>Rollrasen &amp; Rasenbau</option>
+              <option>Zaunbau</option>
+              <option>Mauern &amp; Treppen</option>
+              <option>Pool- &amp; Außenanlagen</option>
+              <option>Gartenpflege</option>
+              <option>Sonstiges</option>
+            </select>
+            <button type="button" class="btn-add-service" data-form="hero" aria-label="Leistung hinzufügen" title="Noch eine Leistung hinzufügen" style="width:44px;height:44px;padding:0;display:grid;place-items:center;font-size:1.4rem;font-weight:300">+</button>
+          </div>
+          <div class="services-list" data-form="hero" style="margin-top:.8rem;display:grid;gap:.4rem"></div>
+        </div>
+        <div class="form-status" role="status" aria-live="polite"></div>
+        <button class="btn btn--primary btn--block" type="submit">Anfrage senden</button>
+        <p class="form__note">Mit dem Absenden stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.</p>
+      </form>
+    </aside>
   </div>
 </section>
 
@@ -525,6 +530,10 @@
   <a class="float-link" href="https://wa.me/491746796199" target="_blank" rel="noopener" aria-label="YOTEK per WhatsApp schreiben: +49 174 6796199">
     <span class="float-btn float-btn--wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5Z"/></svg></span>
     <span class="float-btn__tip">Per WhatsApp schreiben</span>
+  </a>
+  <a class="float-link" href="mailto:info@yotek.de" aria-label="YOTEK per E-Mail schreiben: info@yotek.de">
+    <span class="float-btn float-btn--mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+    <span class="float-btn__tip">E-Mail schreiben</span>
   </a>
   <a class="float-link" href="tel:+491746796199" aria-label="YOTEK anrufen: +49 174 6796199">
     <span class="float-btn float-btn--phone float-btn--phone-pulse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
