@@ -90,10 +90,20 @@
       }, 150);
     }, { passive: true });
   }
+  // Adresse: auf iPhone/iPad in Apple Karten, sonst Google Maps
+  function initMapLinks() {
+    var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+              (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    if (!ios) return;
+    document.querySelectorAll("a[data-apple]").forEach(function (a) {
+      a.href = a.getAttribute("data-apple");
+    });
+  }
   document.addEventListener("DOMContentLoaded", function () {
     initThemes();
     initNav();
     initReveal();
     initScrollRestore();
+    initMapLinks();
   });
 })();

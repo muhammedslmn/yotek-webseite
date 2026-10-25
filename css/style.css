@@ -455,7 +455,7 @@ p { color: var(--text); }
 
 /* Footer */
 .footer { border-top: var(--hair) solid var(--border); margin-top: var(--sp-7); background: var(--bg-2); }
-.footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: var(--sp-5); padding-block: var(--sp-7) var(--sp-5); }
+.footer__grid { display: grid; grid-template-columns: 1.3fr .9fr .9fr 1.6fr; gap: var(--sp-5); padding-block: var(--sp-7) var(--sp-5); }
 .footer p { font-size: var(--fs-small); color: var(--muted); margin-top: var(--sp-3); max-width: 34ch; }
 .footer h4 { font-family: var(--font-display); font-size: .82rem; text-transform: uppercase; letter-spacing: .14em; color: var(--steel); margin-bottom: var(--sp-3); }
 .footer ul { list-style: none; padding: 0; display: grid; gap: .55rem; }
@@ -598,3 +598,10 @@ p { color: var(--text); }
   .contact-grid__aside { display: none; }
   .contact-grid__form { width: 100%; max-width: 860px; margin-inline: auto; }
 }
+
+/* Footer-Kontakt: links Beschriftung, rechts Wert */
+.footer__contact { gap: .7rem; }
+.footer__contact li { display: grid; grid-template-columns: 4.9rem 1fr; gap: 0 .8rem; align-items: start; }
+.footer__contact .lbl { opacity: .75; }
+.footer__contact .val a { display: block; }
+.contact-list .val a { color: inherit; }
