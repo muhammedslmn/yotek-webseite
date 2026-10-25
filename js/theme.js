@@ -70,9 +70,30 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
+  // Nach Aktualisieren (oder Zurück) wieder dort landen, wo man stand
+  function initScrollRestore() {
+    var key = "yotek-scroll:" + location.pathname;
+    try { history.scrollRestoration = "manual"; } catch (e) {}
+    var nav = window.performance && performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    var type = nav ? nav.type : "navigate";
+    var saved = 0;
+    try { saved = parseInt(sessionStorage.getItem(key), 10) || 0; } catch (e) {}
+    if ((type === "reload" || type === "back_forward") && !location.hash && saved > 0) {
+      var go = function () { window.scrollTo({ top: saved, left: 0, behavior: "instant" }); };
+      window.addEventListener("load", function () { go(); setTimeout(go, 300); setTimeout(go, 1000); });
+    }
+    var timer;
+    window.addEventListener("scroll", function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        try { sessionStorage.setItem(key, String(Math.round(window.pageYOffset))); } catch (e) {}
+      }, 150);
+    }, { passive: true });
+  }
   document.addEventListener("DOMContentLoaded", function () {
     initThemes();
     initNav();
     initReveal();
+    initScrollRestore();
   });
 })();
