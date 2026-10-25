@@ -459,6 +459,7 @@ p { color: var(--text); }
 .footer p { font-size: var(--fs-small); color: var(--muted); margin-top: var(--sp-3); max-width: 34ch; }
 .footer h4 { font-family: var(--font-display); font-size: .82rem; text-transform: uppercase; letter-spacing: .14em; color: var(--steel); margin-bottom: var(--sp-3); }
 .footer ul { list-style: none; padding: 0; display: grid; gap: .55rem; }
+.footer li { font-size: var(--fs-small); font-weight: 400; color: var(--muted); line-height: 1.55; }
 .footer a { font-size: var(--fs-small); color: var(--muted); transition: color var(--t-fast); }
 .footer a:hover { color: var(--accent); }
 .footer__bottom { border-top: var(--hair) solid var(--border-soft); padding-block: var(--sp-4); display: flex; flex-wrap: wrap; gap: var(--sp-3); justify-content: space-between; align-items: center; font-size: .82rem; color: var(--muted); }
