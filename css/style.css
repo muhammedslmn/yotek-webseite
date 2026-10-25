@@ -592,12 +592,9 @@ p { color: var(--text); }
   .hero__cta--all .btn { --pad-x: .7rem; font-size: .9rem; text-align: center; }
 }
 
-/* Unten am PC: Formular ohne Kontaktspalte (Kontaktdaten stehen im Footer) */
-@media (min-width: 981px) {
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-grid__aside { display: none; }
-  .contact-grid__form { width: 100%; max-width: 860px; margin-inline: auto; }
-}
+/* Unten: Formular ohne Kontaktspalte (Kontaktdaten stehen im Footer) */
+.contact-grid { grid-template-columns: 1fr; }
+.contact-grid__form { width: 100%; max-width: 860px; margin-inline: auto; }
 
 /* Footer-Kontakt: links Beschriftung, rechts Wert */
 .footer__contact { gap: .7rem; }
