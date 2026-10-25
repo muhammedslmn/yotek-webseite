@@ -55,21 +55,13 @@
   }
 
   function initReveal() {
-    var items = document.querySelectorAll(".reveal, .section__head");
+    var items = document.querySelectorAll(".reveal");
     if (!items.length) return;
     if (!("IntersectionObserver" in window) ||
         window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       items.forEach(function (el) { el.classList.add("is-in"); });
       return;
     }
-    // Gestaffeltes Einblenden: Geschwister im selben Container nacheinander
-    var seen = new Map();
-    items.forEach(function (el) {
-      if (!el.classList.contains("reveal")) return;
-      var n = seen.get(el.parentNode) || 0;
-      el.style.setProperty("--d", Math.min(n, 5) * 0.1 + "s");
-      seen.set(el.parentNode, n + 1);
-    });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
