@@ -50,6 +50,13 @@
         return;
       }
 
+      // Chip-Auswahl (mehrere Leistungen) in ein Feld zusammenführen
+      var chips = form.querySelector("[data-chips]");
+      if (chips) {
+        var picked = [].map.call(chips.querySelectorAll("input[type=checkbox]:checked"), function (c) { return c.value; });
+        form.querySelector("input[name=leistung]").value = picked.join(", ");
+      }
+
       var fd = new FormData(form);
       var data = {};
       fd.forEach(function (v, k) { data[k] = v; });
