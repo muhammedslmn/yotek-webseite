@@ -6,14 +6,13 @@
    Ohne Formspree-Endpoint: Formular zeigt lokale Erfolgsmeldung und bleibt auf der Seite.
    Optional mit Formspree (externe E-Mail-Integration):
    1. Kostenloses Konto auf https://formspree.io erstellen, Formular anlegen,
-      Ziel-E-Mail = yorulmaz.de@gmail.com bestätigen.
+      Ziel-E-Mail (z. B. info@yotek.de) bestätigen.
    2. Den erhaltenen Endpoint unten bei FORM_ENDPOINT eintragen
       (Form "https://formspree.io/f/XXXXXXX"). */
 (function () {
   "use strict";
 
   var FORM_ENDPOINT = "https://formspree.io/f/xqevbawj";
-  var TARGET_EMAIL = "yorulmaz.de@gmail.com";
   var MAX_FILES = 5;
   var MAX_BYTES = 10 * 1024 * 1024;
 

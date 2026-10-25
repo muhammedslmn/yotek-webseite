@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Read(//c/Users/muvahhid/Pictures/**)",
-      "mcp__Claude_Preview__preview_start"
-    ]
-  }
-}
