@@ -559,3 +559,6 @@ p { color: var(--text); }
 
 /* Bilder in den Leistungs-Blöcken */
 .svc-block__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--sp-3); display: block; }
+
+/* Sprungmarken nicht unter dem Header verstecken */
+#angebot, #kontakt, #bewerbung, #leistungen, #zielgruppen { scroll-margin-top: 90px; }
