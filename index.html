@@ -24,10 +24,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/logo/logo-dark.png">
 <link rel="stylesheet" href="css/style.css">
 
 <!-- Theme beim Neuladen immer auf Grau (anthrazit) setzen -->
-<script>document.documentElement.setAttribute('data-theme','anthrazit');window.__yotekLoadingLogo='assets/logo/logo-dark.png';</script>
+<script>(function(){var r=document.documentElement;r.setAttribute('data-theme','anthrazit');var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}if(!reduce){r.classList.add('intro-pending');setTimeout(function(){r.classList.remove('intro-pending');},7000);}})();</script>
 
 <!-- SEO: Webseitenname (Google Websitename) -->
 <script type="application/ld+json">
@@ -77,27 +78,42 @@
 </head>
 <body>
 
-<!-- ============ LOADING SCREEN ============ -->
-<div id="loading-screen" style="position:fixed;inset:0;z-index:9999;background:#1a1c1b;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:1;transition:opacity .5s ease .6s,visibility 0s linear 1.1s;visibility:visible">
-  <img id="loading-logo" src="assets/logo/logo-dark.png" alt="YOTEK Garden Design" width="168" height="63" style="margin-bottom:2.2rem;height:auto;width:168px">
-  <div style="width:200px;height:4px;background:rgba(157,217,63,.2);border-radius:2px;overflow:hidden;margin-bottom:1.2rem">
-    <div id="loading-bar" style="height:100%;background:linear-gradient(90deg,#9ad94a,#8dc63f);width:0%;transition:width .2s ease;border-radius:2px"></div>
+<!-- ============ ERÖFFNUNG (Ladebildschirm) ============ -->
+<div id="loading-screen" aria-hidden="true">
+  <div class="ld__panel ld__panel--top"></div>
+  <div class="ld__panel ld__panel--bottom"></div>
+  <div class="ld__center">
+    <div class="ld__logo"><img src="assets/logo/logo-dark.png" alt="" width="865" height="324"><span class="ld__shine"></span></div>
+    <div class="ld__line"><span id="ld-bar"></span></div>
+    <div class="ld__pct" id="ld-pct">0%</div>
   </div>
-  <div id="loading-percent" style="font-size:0.9rem;color:#9aa292;font-family:Inter,system-ui,sans-serif;font-weight:500;letter-spacing:.05em">0%</div>
 </div>
 <script>
 (function(){
-  var logo=document.getElementById('loading-logo');
-  if(logo&&window.__yotekLoadingLogo){logo.src=window.__yotekLoadingLogo;}
-  var screen=document.getElementById('loading-screen'),bar=document.getElementById('loading-bar'),pct=document.getElementById('loading-percent');
-  var p=0,target=100,interval=setInterval(function(){
-    p+=Math.random()*40;if(p>target-10)p=target-10;
-    bar.style.width=p+'%';pct.textContent=Math.round(p)+'%';
-  },100);
-  window.addEventListener('load',function(){
-    clearInterval(interval);p=100;bar.style.width='100%';pct.textContent='100%';
-    setTimeout(function(){screen.style.opacity='0';screen.style.visibility='hidden';},500);
-  });
+  var root=document.documentElement,scr=document.getElementById('loading-screen');
+  if(!scr)return;
+  var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  var seen=false;try{seen=sessionStorage.getItem('yotek-intro')==='1';}catch(e){}
+  var minMs=(reduce||seen)?250:1900;
+  var bar=document.getElementById('ld-bar'),pct=document.getElementById('ld-pct');
+  var start=Date.now(),loaded=false,done=false,shown=0;
+  window.addEventListener('load',function(){loaded=true;});
+  setTimeout(function(){loaded=true;},9000);
+  var timer=setInterval(function(){
+    var t=Date.now()-start;
+    var target=loaded?100:Math.min(88,100*(1-Math.exp(-t/900)));
+    shown+=(target-shown)*0.16;
+    if(loaded&&target-shown<0.6)shown=100;
+    bar.style.transform='scaleX('+(shown/100)+')';
+    pct.textContent=Math.round(shown)+'%';
+    if(!done&&loaded&&shown>=100&&t>=minMs){done=true;clearInterval(timer);finish();}
+  },30);
+  function finish(){
+    try{sessionStorage.setItem('yotek-intro','1');}catch(e){}
+    scr.classList.add('is-leaving');
+    root.classList.remove('intro-pending');
+    setTimeout(function(){scr.style.display='none';},1700);
+  }
 })();
 </script>
 
