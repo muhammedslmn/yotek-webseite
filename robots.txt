@@ -3,4 +3,4 @@ Allow: /
 Disallow: /impressum.html
 Disallow: /datenschutz.html
 
-Sitemap: https://www.gardendesignyotek.de/sitemap.xml
+Sitemap: https://www.yotek.de/sitemap.xml
