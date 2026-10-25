@@ -73,10 +73,10 @@
           form.reset();
           status(form, "ok", "Vielen Dank! Ihre Anfrage ist eingegangen — wir melden uns zeitnah bei Ihnen.");
         } else {
-          status(form, "err", "Senden fehlgeschlagen. Bitte rufen Sie uns an: 0171 3410500.");
+          status(form, "err", "Senden fehlgeschlagen. Bitte rufen Sie uns an: +49 174 6796199.");
         }
       }).catch(function () {
-        status(form, "err", "Verbindungsfehler. Bitte rufen Sie uns an: 0171 3410500.");
+        status(form, "err", "Verbindungsfehler. Bitte rufen Sie uns an: +49 174 6796199.");
       }).finally(function () {
         if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Anfrage senden"; }
       });
