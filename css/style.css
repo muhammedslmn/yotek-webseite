@@ -663,3 +663,5 @@ html.intro-pending .hero__bg img { transform: scale(1.14); }
   .ld__shine { display: none; }
   .ld__panel, .ld__center { transition: none; }
 }
+/* Startseite Leistungen: einzelne Karte in der letzten Reihe mittig (nur 3-spaltig) */
+@media (min-width: 981px) { .services > .service:last-child:nth-child(3n+1) { grid-column: 2; } }
