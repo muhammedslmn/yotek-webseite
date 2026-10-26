@@ -665,3 +665,31 @@ html.intro-pending .hero__bg img { transform: scale(1.14); }
 }
 /* Startseite Leistungen: einzelne Karte in der letzten Reihe mittig (nur 3-spaltig) */
 @media (min-width: 981px) { .services > .service:last-child:nth-child(3n+1) { grid-column: 2; } }
+
+/* Leistungen auf dem Handy: kompakt, weniger Scrollen */
+@media (max-width: 760px) {
+  .svc-list { gap: var(--sp-2); }
+  .svc-block { padding: var(--sp-3); }
+  .svc-block:has(> .svc-block__img) { display: grid; grid-template-columns: 84px 1fr; column-gap: var(--sp-3); align-items: center; }
+  .svc-block:has(> .svc-block__img) > ul { grid-column: 1 / -1; }
+  .svc-block__img { width: 84px; height: 84px; aspect-ratio: 1; margin: 0; border-radius: 10px; }
+  .svc-block__head { margin-bottom: 0; gap: var(--sp-2); }
+  .svc-block > ul { margin-top: var(--sp-2); }
+  .svc-block h3 { font-size: 1.05rem; line-height: 1.25; }
+  .svc-block__icon { width: 36px; height: 36px; border-radius: 9px; }
+  .svc-block__icon svg { width: 19px; height: 19px; }
+  .svc-block ul { gap: .3rem; }
+  .svc-block li { font-size: .86rem; line-height: 1.4; padding-left: 1.25rem; }
+  .svc-block li::before { width: 6px; height: 6px; top: .55em; }
+}
+/* Startseite Leistungen auf dem Handy: schmale Zeilen statt grosser Bildkarten */
+@media (max-width: 560px) {
+  .services { gap: var(--sp-2); }
+  .service { flex-direction: row; align-items: stretch; }
+  .service__media { flex: 0 0 104px; aspect-ratio: auto; min-height: 104px; }
+  .service:hover .service__media img { transform: none; }
+  .service__body { padding: .7rem .85rem; gap: .25rem; justify-content: center; }
+  .service__body h3 { font-size: 1rem; line-height: 1.25; }
+  .service__body p { font-size: .84rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .service__link { font-size: .85rem; margin-top: .1rem; }
+}
